@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
 </head>
 <body>
+    <header class="jumbotron">
+        <h1 class="display-3">Hungry??</h1>
+        <p class="lead">What do you feel like eating today</p>
+        <p id="currentDay" class="lead"></p>
+      </header>
+      <div class="container">
+        
+      </div>
     
+      <div>
+        <button type="button" id="african">African</button> 
+        <button type="button" id="chinese">Chinese</button> 
+        <button type="button" id="european">European</button> 
+        <button type="button" id="indian">Indian</button> 
+        <button type="button" id="american">American</button> 
+        <button type="button" id="latin_american">Latin American</button> 
+        
+
+      </div>
+
+      <div><!--img src="http://ontheworldmap.com/world/world-map-with-continents.jpg" alt="Spongebob!" /-->
+        <img src="worldmap.jpg" alt="Worldmap" usemap="#worldmap" width="500" height="500">
     
+        <map name="worldmap">
+          <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+          <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+          <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+        </map> 
+    </div>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
