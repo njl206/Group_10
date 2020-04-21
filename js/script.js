@@ -11,9 +11,26 @@ $( document ).ready(function() {
         console.log ("continent",continent)
         var urlQuery = apiQuery + continent+"&number=15&" + apikey;
         console.log(urlQuery);
-        $.ajax({url: urlQuery, success: function(result){
-         // $("#div1").html(result);
-         console.log(result);
+        $.ajax({url: urlQuery, success: function(response){
+         console.log(response);
+         var imageURI = response.baseUri;
+         for(var i = 0; i < response.results.length; i++) {
+           console.log (response.results[i]); 
+           var recipe = response.results[i];
+           var recipeEl = $("<div>");
+           recipeEl.addClass("recipe");
+           $("#cookbook").append(recipeEl)
+           var titleEl = $("<h3>");
+           titleEl.addClass("recipeTitle");
+           titleEl.text(recipe.title);
+           recipeEl.append(titleEl) 
+           var imageEl = $("<img>")
+           imageEl.attr("src",imageURI + recipe.image)
+           recipeEl.append(imageEl)
+           var prepEl = $("<p>")
+           prepEl.text("preptime: " + recipe.readyInMinutes + ", servings: " + recipe.servings)
+           recipeEl.append(prepEl)
+         }
         }});
       });
 
